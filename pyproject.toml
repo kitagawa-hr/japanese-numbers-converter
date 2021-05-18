@@ -6,8 +6,8 @@ authors = ["Haruki Kitagawa <kitagawahr@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 keywords = ["japanese", "number", "parser"]
-homepage = ""
-repository = ""
+homepage = "https://github.com/kitagawa-hr/japanese-numbers-converter"
+repository = "https://github.com/kitagawa-hr/japanese-numbers-converter"
 packages = [
     { include = "main.py" }
 ]
