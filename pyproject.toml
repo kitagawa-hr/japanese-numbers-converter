@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "japanese-number-converter"
+version = "0.1.0"
+description = "convert japanese numbers to arabic numbers"
+authors = ["Haruki Kitagawa <kitagawahr@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["japanese", "number", "parser"]
+homepage = ""
+repository = ""
+packages = [
+    { include = "main.py" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+flake8 = "^3.9.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
