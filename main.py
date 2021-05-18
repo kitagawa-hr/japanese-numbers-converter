@@ -56,7 +56,7 @@ SUPPORTED_CHARS = UNIT_CHARS + JAPANESE_DIGIT_CHARS
 SUPPORTED_REGEX = re.compile(rf"^[{SUPPORTED_CHARS}]+$")
 
 
-def validate(s: str):
+def validate(s: str) -> None:
     if s == "":
         raise ValidationError("Empty string")
     if re.search(r"一[百十]", s):
@@ -96,7 +96,7 @@ def parse(s: str, index: int = 0) -> int:
     raise ParseError(f"{unit_str} appears more than once in subsequence {s}")
 
 
-def to_number(s: str, validation: bool = True, accept_daiji: bool = True):
+def to_number(s: str, validation: bool = True, accept_daiji: bool = True) -> int:
     if not isinstance(s, str):
         raise TypeError(f"{s} is not string")
     if len(s) == 1 and s == "〇":
