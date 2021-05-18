@@ -51,10 +51,6 @@ jobs:
       run: |
         poetry run flake8 *.py
 
-    - name: mypy typecheck
-      run: |
-        poetry run mypy jnc.py
-
     - name: Test with pytest
       run: |
         poetry run pytest test_jnc.py
