@@ -9,7 +9,7 @@ keywords = ["japanese", "number", "parser"]
 homepage = "https://github.com/kitagawa-hr/japanese-numbers-converter"
 repository = "https://github.com/kitagawa-hr/japanese-numbers-converter"
 packages = [
-    { include = "main.py" }
+    { include = "jnc.py" }
 ]
 
 [tool.poetry.dependencies]
