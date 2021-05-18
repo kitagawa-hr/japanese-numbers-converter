@@ -96,7 +96,23 @@ def parse(s: str, index: int = 0) -> int:
     raise ParseError(f"{unit_str} appears more than once in subsequence {s}")
 
 
-def to_number(s: str, validation: bool = True, accept_daiji: bool = True) -> int:
+def ja_to_arabic(s: str, enable_validation: bool = True, accept_daiji: bool = True) -> int:
+    """convert japanese number to arabic number
+
+    Args:
+        s (str): number in japanese format
+        validation (bool, optional): Whether to enable validate or not. Defaults to True.
+        accept_daiji (bool, optional): Whether to accept daiji or not. Defaults to True.
+
+    Raises:
+        TypeError: [description]
+        NotSupportedError: [description]
+        ValidationError: [description]
+        ParseError: [description]
+
+    Returns:
+        int: arabic number
+    """
     if not isinstance(s, str):
         raise TypeError(f"{s} is not string")
     if len(s) == 1 and s == "〇":
@@ -104,7 +120,7 @@ def to_number(s: str, validation: bool = True, accept_daiji: bool = True) -> int
         return 0
     if len(s) > 32:
         raise NotSupportedError(f"{s} is too long.")
-    if validation:
+    if enable_validation:
         validate(s)
     if accept_daiji:
         s = s.translate(DAIJI_TRANS)

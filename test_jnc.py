@@ -1,6 +1,6 @@
 import pytest
 
-from jnc import NotSupportedError, ParseError, ValidationError, to_number
+from jnc import NotSupportedError, ParseError, ValidationError, ja_to_arabic
 
 
 @pytest.mark.parametrize(
@@ -42,7 +42,7 @@ from jnc import NotSupportedError, ParseError, ValidationError, to_number
     ],
 )
 def test_valid_cases(input_case, expected):
-    assert to_number(input_case) == expected
+    assert ja_to_arabic(input_case) == expected
 
 
 @pytest.mark.parametrize(
@@ -56,7 +56,7 @@ def test_valid_cases(input_case, expected):
 )
 def test_raises_not_supported_error(input_case):
     with pytest.raises(NotSupportedError):
-        to_number(input_case)
+        ja_to_arabic(input_case)
 
 
 @pytest.mark.parametrize(
@@ -86,7 +86,7 @@ def test_raises_not_supported_error(input_case):
 )
 def test_raises_validation_error(input_case):
     with pytest.raises(ValidationError):
-        to_number(input_case)
+        ja_to_arabic(input_case)
 
 
 @pytest.mark.parametrize(
@@ -116,4 +116,4 @@ def test_raises_validation_error(input_case):
 )
 def test_raises_parse_error(input_case):
     with pytest.raises(ParseError):
-        to_number(input_case)
+        ja_to_arabic(input_case)
