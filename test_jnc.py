@@ -1,6 +1,6 @@
 import pytest
 
-from main import NotSupportedError, ParseError, ValidationError, to_number
+from jnc import NotSupportedError, ParseError, ValidationError, to_number
 
 
 @pytest.mark.parametrize(
