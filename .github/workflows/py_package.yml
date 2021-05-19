@@ -49,7 +49,7 @@ jobs:
 
     - name: Lint with flake8
       run: |
-        poetry run flake8 *.py
+        poetry run flake8 jnc test_jnc.py
 
     - name: Test with pytest
       run: |

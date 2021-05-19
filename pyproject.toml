@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "japanese-number-converter"
-version = "1.0.0"
+version = "1.0.1"
 description = "convert japanese numbers to arabic numbers"
 authors = ["Haruki Kitagawa <kitagawahr@gmail.com>"]
 license = "MIT"
@@ -9,7 +9,8 @@ keywords = ["japanese", "number", "parser"]
 homepage = "https://github.com/kitagawa-hr/japanese-numbers-converter"
 repository = "https://github.com/kitagawa-hr/japanese-numbers-converter"
 packages = [
-    { include = "jnc.py" }
+    { include = "jnc" },
+    { include = "jnc/py.typed" }
 ]
 
 [tool.poetry.dependencies]

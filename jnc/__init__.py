@@ -1,6 +1,6 @@
 import re
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 class BaseJapaneseNumeralsException(Exception):
@@ -103,14 +103,14 @@ def ja_to_arabic(s: str, enable_validation: bool = True, accept_daiji: bool = Tr
 
     Args:
         s (str): number in japanese format
-        validation (bool, optional): Whether to enable validate or not. Defaults to True.
+        enable_validation (bool, optional): Whether to enable validation or not. Defaults to True.
         accept_daiji (bool, optional): Whether to accept daiji or not. Defaults to True.
 
     Raises:
-        TypeError: [description]
-        NotSupportedError: [description]
-        ValidationError: [description]
-        ParseError: [description]
+        TypeError: raises if s is not str.
+        NotSupportedError: raises if s is too long or contains unsupported chars.
+        ValidationError: raises if s is uncommon expression like ``千万, 二〇千, 一万兆``.
+        ParseError: raises if s is not parsable. (e.g.)``十十, 〇十, 四万三億``
 
     Returns:
         int: arabic number
